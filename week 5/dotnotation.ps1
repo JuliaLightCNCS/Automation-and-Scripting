@@ -8,9 +8,9 @@ $table = gatherClasses
 
 $fulltable = daysTranslator $table
 
-# $fulltable | Select-Object "Class-Code", Instructor, Location, Days, "Time Start", "Time End" | ? {$_."Instructor" -ilike "Furkan*"}
+$fulltable | Select-Object "Class-Code", Instructor, Location, Days, "Time Start", "Time End" | ? {$_."Instructor" -ilike "Furkan*"}
 
-# $fulltable | ? { ($_.Location -ilike "JOYC 310") -and($_.Days -contains "Monday") } | Sort-Object "Time Start" | Select-Object "Time Start", "Time End", "Class Code"
+$fulltable | ? { ($_.Location -ilike "JOYC 310") -and($_.Days -contains "Monday") } | Sort-Object "Time Start" | Select-Object "Time Start", "Time End", "Class Code"
 
 $ITSInstructors = $fulltable | Sort-Object { ($_."Class Code" -ilike "SYS*") -or `
                                    ($_."Class Code" -ilike "NET*") -or `

@@ -16,14 +16,14 @@ for($i=1; $i -lt $trs.length; $i++){ # Going over every tr element
     # Want to separate start time and end time from one time field
     $Times = $tds[5].innertext.split("-")
 
-    $fulltable +=[pscustomobject]@{"Class Code" = $tds[0].innertext; `
-                                   "Title" = $tds[1].innertext; `
-                                   "Days" = $tds[4].innertext; `
-                                   "Time start" = $Times[0]; `
-                                   "Time end" = $Times[1]; `
-                                   "Instructor" = $tds[6].innertext; `
-                                   "location" = $tds[9].innertext;
-                                        }
+    $fulltable +=[pscustomobject]@{"Class Code" = $tds[0].innerText;
+                                        "Title"      = $tds[1].innerText;
+                                        "Days"       = $tds[4].innerText;
+                                        "Time Start" = $times[0];
+                                        "Time End"   = $times[1];
+                                        "Instructor" = $tds[6].innerText;
+                                        "Location"   = $tds[9].innerText;
+                                       }
     }
 return $fulltable
 }
