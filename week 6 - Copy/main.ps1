@@ -1,6 +1,5 @@
 ﻿. (Join-Path $PSScriptRoot Users.ps1)
 . (Join-Path $PSScriptRoot Event-Logs.ps1)
-﻿. (Join-Path $PSScriptRoot String-Helper.ps1)
 
 clear
 
@@ -147,7 +146,3 @@ while($operation){
     
 
 }
-
-
-
-

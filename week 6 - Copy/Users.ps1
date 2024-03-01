@@ -77,11 +77,17 @@ function enableAUser($name){
 function checkUser($name){
 
     $usercheck = Get-LocalUser | Where-Object {$_.name -ilike $name}
-    if($usercheck -ne $null){
-    return $true
-    }
-    else{
-    write-host "$usercheck is $null"
+    if($usercheck.count -eq 0){
+    Write-Host "no"
     return $false
     }
+    else{
+    write-host "yes"
+    return $true
+    }
 }
+
+checkUser 'champuser'
+ # TODO: Check the given username with your new function.
+        #              - If false is returned, continue with the rest of the function
+        #              - If true is returned, do not continue and inform the user

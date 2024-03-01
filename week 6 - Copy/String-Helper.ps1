@@ -45,3 +45,5 @@ else{
 write-host "4"
 return $true}
 }
+
+checkPassword 12345!
