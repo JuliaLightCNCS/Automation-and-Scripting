@@ -6,8 +6,8 @@ $file = Get-Content -Path C:\Users\champuser\Automation-and-Scripting\week7\conf
 $data = $file.split("`n")
 
 $a= @()
-$a+=[pscustomobject]@{"days" = $data[0]
-                      "ExecutionTime" = $data[1]
+$a+=[pscustomobject]@{"Days" = $data[0];`
+                      "ExecutionTime" = $data[1];
 }
 Write-Host ($a | Format-Table | Out-String)
 
@@ -21,11 +21,12 @@ while ($operation) {
     $newtime = Read-Host -Prompt "enter a time in #:## AM/PM format"
     if ($newdays -match '[\d+]'){
         if ($newtime -match '\d:\d\d [AP]M') {
-            Set-Content -Path C:\Users\champuser\Automation-and-Scripting\week7\configurations.txt -value $newdays $newtime
+            Set-Content -Path C:\Users\champuser\Automation-and-Scripting\week7\configurations.txt -value $newdays, $newtime
+            Write-Host "config successfully changed"
             return
         }
         else{
-            write-host "didn't work"
+            write-host "didn't work try again"
         }
     }
 }
