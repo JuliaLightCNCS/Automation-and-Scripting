@@ -1,5 +1,5 @@
 ﻿clear
-<#
+
 function ApacheLogs1(){
 $logsNotFormatted = Get-Content C:\xampp\apache\logs\access.log
 $tableRecords = @()
@@ -20,4 +20,4 @@ $tableRecords +=[pscustomobject]@{ "IP" = $words[$i];`
 return $tableRecords | Where-Object{$_.IP -like "10.*"}
 }
 $tableRecords = ApacheLogs1
-$tableRecords = Format-Table -AutoSize -Wrap #>
+$tableRecords = Format-Table -AutoSize -Wrap 
