@@ -5,13 +5,13 @@
 
 
 # Obtaining Configuration
-$configuration = configurationMenu
+$configuration = readconfiguration
 
 # Obtaining at risk users
-$Failed = atRiskUsers $failedloginsTable
+$Failed = atRiskUsers $configuration.days
 
 # Sending at risk users an email
 SendAlertEmail ($Failed | Format-Table | Out-String)
 
 # Setting the script to be run daily
-ChooseTimeToRun($scheduledtasks.***)
+ChooseTimeToRun($scheduledtasks.ExecutionTime)
